@@ -42,14 +42,14 @@
   </head>
 <body>
 
-<h1>4 Bilder 1 Wort</h1>
+<h1 id = "title">4 Bilder 1 Wort (4 Buchstaben)</h1>
   <br>
   
-<img src="./wort1.jpg"/>
+<img id="img" src="./wort1.jpg"/>
 
 <h3>Wort eingeben:</h3>
 <input type="text" id="pwd" name="fname"><br><br>
-<button type="button" id="img" onclick="verifyInput()">OK</button>
+<button id="but" type="button" onclick="verifyInput()">OK</button>
 
 
 <script>
@@ -58,11 +58,23 @@ var state = 1;
 
 function verifyInput() {
   let text = document.getElementById("pwd").value;
-  let img = document.getElementById("img").value;
+  let title = document.getElementById("title");
+  let img = document.getElementById("img");
+  let but = document.getElementById("but");
   
   if (state == 1 && text.trim().toLowerCase() === "brei") {
     img.src = "./wort2.jpg";
+    title.innerHTML = "4 Bilder 1 Wort (5 Buchstaben)";
     state = 2;
+  } else if (state == 2 && text.trim().toLowerCase() === "alter") {
+    img.src = "./wort2.jpg";
+    title.innerHTML = "4 Bilder 1 Wort (6 Buchstaben)";
+    state = 3;
+  } else if (state == 3 && text.trim().toLowerCase() === "billig") {
+    img.style.display = "none";
+    but.style.display = "none";
+    title.innerHTML = "NICE";
+    state = 4;  
   } else {
     alert("Falsch");
   }
