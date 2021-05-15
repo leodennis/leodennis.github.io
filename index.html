@@ -84,6 +84,14 @@ function verifyInput() {
   
 }
 
+// Execute a function when the user releases a key on the keyboard
+document.getElementById("but").addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    document.getElementById("but").click();
+  }
+});
+
 </script>
  
 </body>
