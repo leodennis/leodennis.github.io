@@ -33,7 +33,8 @@
     }
     
     img {
-      display: flex; 
+      display: flex;
+      width: 80%;
        margin: 0 auto;
     }
     
@@ -44,11 +45,11 @@
 
 <h1 id = "title">4 Bilder 1 Wort (4 Buchstaben)</h1>
   <br>
-  
+<p id = "hint2" style="display:none">1. Ziffer = Anzahl von orange<br>2. Ziffer = Anzahl von gelb<br>3. Ziffer = Anzahl von schwarz</p>
+
 <img id="img" src="./wort1.jpg"/>
 
 <h3 id = "hint">Wort eingeben:</h3>
-<p id = "hint2" style="display:none">1. Ziffer = Anzahl von orange<br>2. Ziffer = Anzahl von gelb<br>3. Ziffer = Anzahl von schwarz</p>
 <input type="text" id="pwd" name="fname"><br><br>
 <button id="but" type="button" onclick="verifyInput()">OK</button>
 
@@ -80,8 +81,8 @@ function verifyInput() {
     but.style.display = "none";
     text.style.display = "none";
     hint2.style.display = "block";
-    hint.innerHTML = "Suche das Buch der Weisheit!";
-    title.innerHTML = "Geschafft";
+    hint.style.display = "block";
+    title.innerHTML = "Suche das Buch der Weisheit!";
     state = 4;  
   } else {
     alert("Falsch");
