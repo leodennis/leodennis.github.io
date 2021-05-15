@@ -47,7 +47,7 @@
   
 <img id="img" src="./wort1.jpg"/>
 
-<h3>Wort eingeben:</h3>
+<h3 id = "hint">Wort eingeben:</h3>
 <input type="text" id="pwd" name="fname"><br><br>
 <button id="but" type="button" onclick="verifyInput()">OK</button>
 
@@ -57,22 +57,25 @@
 var state = 1;
 
 function verifyInput() {
-  let text = document.getElementById("pwd").value;
+  let text = document.getElementById("pwd");
   let title = document.getElementById("title");
   let img = document.getElementById("img");
   let but = document.getElementById("but");
+  let hint = document.getElementById("hint");
   
-  if (state == 1 && text.trim().toLowerCase() === "brei") {
+  if (state == 1 && text.value.trim().toLowerCase() === "brei") {
     img.src = "./wort2.jpg";
     title.innerHTML = "4 Bilder 1 Wort (5 Buchstaben)";
     state = 2;
-  } else if (state == 2 && text.trim().toLowerCase() === "alter") {
-    img.src = "./wort2.jpg";
+  } else if (state == 2 && text.value.trim().toLowerCase() === "alter") {
+    img.src = "./wort3.jpg";
     title.innerHTML = "4 Bilder 1 Wort (6 Buchstaben)";
     state = 3;
-  } else if (state == 3 && text.trim().toLowerCase() === "billig") {
+  } else if (state == 3 && text.value.trim().toLowerCase() === "billig") {
     img.style.display = "none";
     but.style.display = "none";
+    text.style.display = "none";
+    hint.style.display = "none";
     title.innerHTML = "NICE";
     state = 4;  
   } else {
