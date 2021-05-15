@@ -49,14 +49,24 @@
 
 <h3>Wort eingeben:</h3>
 <input type="text" id="pwd" name="fname"><br><br>
-<button type="button" onclick="verifyInput()">OK</button>
+<button type="button" id="img" onclick="verifyInput()">OK</button>
 
 
 <script>
+  
+var state = 1;
 
 function verifyInput() {
   let text = document.getElementById("pwd").value;
-  alert(text);
+  let img = document.getElementById("img").value;
+  
+  if (state == 1 && text.trim().toLowerCase() === "brei") {
+    img.src = "./wort2.jpg";
+    state = 2;
+  } else {
+    alert("Falsch");
+  }
+  
 }
 
 </script>
