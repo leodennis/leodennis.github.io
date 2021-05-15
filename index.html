@@ -65,10 +65,12 @@ function verifyInput() {
   
   if (state == 1 && text.value.trim().toLowerCase() === "brei") {
     img.src = "./wort2.jpg";
+    text.value = "";
     title.innerHTML = "4 Bilder 1 Wort (5 Buchstaben)";
     state = 2;
   } else if (state == 2 && text.value.trim().toLowerCase() === "alter") {
     img.src = "./wort3.jpg";
+    text.value = "";
     title.innerHTML = "4 Bilder 1 Wort (6 Buchstaben)";
     state = 3;
   } else if (state == 3 && text.value.trim().toLowerCase() === "billig") {
